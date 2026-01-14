@@ -4,11 +4,6 @@ import { FormOption } from "../utils/enums/form-option";
 
 export class MainPage extends BasePage {
 
-    // Locators
-    // get formButton(): (text: string) => Locator {
-    //     return 
-    // }
-
     constructor(page: Page) {
         super(page)
     }
@@ -23,7 +18,7 @@ export class MainPage extends BasePage {
             await expect(this.buttonWithText(options.form)).not.toBeVisible()
     }
 
-    async shouldOptionsBeVisible(options: { formOption: FormOption }) {
-        await expect(this.page.getByText(options.formOption)).toBeVisible()
-     }
+    // async shouldOptionsBeVisible(options: { formOption: FormOption }) {
+    //     await expect(this.page.getByText(options.formOption)).toBeVisible()
+    //  }
 }

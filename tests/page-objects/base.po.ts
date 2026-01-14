@@ -7,6 +7,7 @@ export default class BasePage {
 
     constructor(page: Page) {
         this.page = page
+        this.formComponent = new FormComponent(page)
     }
     
     get buttonWithText(): (text: string) => Locator {
