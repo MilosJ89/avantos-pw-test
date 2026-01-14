@@ -18,10 +18,6 @@ export class BaseApi {
                 returnContext = await apiContext.get(`${baseApiUrl}${options.url}`, {
                     headers
                 })
-            // case 'POST':
-            //     returnContext = await apiContext.post(`${baseApiUrl}${options.url}`, {
-            //         headers: 
-            //     })
         }
 
         return returnContext
