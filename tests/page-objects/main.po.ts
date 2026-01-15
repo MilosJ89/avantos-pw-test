@@ -17,8 +17,4 @@ export class MainPage extends BasePage {
             await expect(this.buttonWithText(options.form)).toBeVisible() :
             await expect(this.buttonWithText(options.form)).not.toBeVisible()
     }
-
-    // async shouldOptionsBeVisible(options: { formOption: FormOption }) {
-    //     await expect(this.page.getByText(options.formOption)).toBeVisible()
-    //  }
 }
