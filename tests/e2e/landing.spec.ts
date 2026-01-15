@@ -1,20 +1,21 @@
 import { test } from '../utils/test-utils';
 import { randomText } from '../helpers/helper-functions';
 import { FormOption } from '../utils/enums/form-option';
+import { GlobalNode } from '../utils/enums/global-node';
 
 test.describe('Landing', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5173')
+    await page.goto('/')
   })
 
   test('Verify all forms', async ({ mainPage }) => {
     // Then
-    await mainPage.shouldFormBe({ visible: true, form: 'Form A' })
-    await mainPage.shouldFormBe({ visible: true, form: 'Form B' })
-    await mainPage.shouldFormBe({ visible: true, form: 'Form C' })
-    await mainPage.shouldFormBe({ visible: true, form: 'Form D' })
-    await mainPage.shouldFormBe({ visible: true, form: 'Form E' })
-    await mainPage.shouldFormBe({ visible: true, form: 'Form F' })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_A })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_B })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_C })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_D })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_E })
+    await mainPage.shouldFormBe({ visible: true, form: GlobalNode.FORM_F })
     await mainPage.shouldFormBe({ visible: false, form: randomText() })
   })
 
