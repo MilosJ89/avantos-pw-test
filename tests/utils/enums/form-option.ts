@@ -7,5 +7,7 @@ export enum FormOption {
     MULTI_SELECT = 'multi_select',
     NAME = 'name',
     NOTES = 'notes',
-    TEST = 'test'
+    TEST = 'test',
+    ROLE = 'role',
+    ACCESS = 'access'
 }

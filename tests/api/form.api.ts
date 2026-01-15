@@ -7,8 +7,6 @@ export class FormApi extends BaseApi {
         return await this.sendRequest({
             method: 'GET',
             url: 'MOCK/actions/blueprints/MOCK/graph'
-        }).then($response => {
-            return $response
         })
     }
 }

@@ -17,6 +17,14 @@ export class FormComponent {
         return text => this._page.locator('h2', { hasText: text })
     }
 
+    get formOptionButton(): (text: string) => Locator {
+        return text => this._page.locator('section button', { hasText: text })
+    }
+
+    get selectedOption(): (text: string) => Locator {
+        return text => this._page.locator('section p', { hasText: text })
+    }
+
     get footerButton(): (name: string) => Locator {
         return name => this._page.locator('footer button', { hasText: name })
     }
@@ -25,16 +33,26 @@ export class FormComponent {
         this._page = page
     }
 
+    async shouldModalBe(options: { visible: boolean }) {
+        options.visible ?
+            await expect(this.formSection).toBeVisible() :
+            await expect(this.formSection).toBeHidden()
+    }
+
     async shouldHaveTitle(options: { text: string }) {
         await expect(this.title).toContainText(options.text)
     }
 
+    async shouldOptionsBeSelected(options: { text: string }) {
+        await expect(this.selectedOption(options.text)).toBeVisible()
+    }
+
     async shouldOptionsBeVisible(options: { formOption: FormOption | string }) {
-        await expect(this._page.getByText(options.formOption)).toBeVisible()
+        await expect(this.formOptionButton(options.formOption)).toBeVisible()
     }
 
     async selectOption(options: { formOption: FormOption }) {
-        await this._page.getByText(options.formOption).click()
+        await this.formOptionButton(options.formOption).click()
     }
 
     async shoulGlobalNodeBe(options: { visible: boolean, node: GlobalNode }) {
@@ -44,7 +62,7 @@ export class FormComponent {
     }
 
     async clickOnGlobalNode(options: { globalNode: GlobalNode }) {
-        await this._page.getByText(options.globalNode).click()
+        await this.globalNodeButton(options.globalNode).click()
     }
 
     async clickOnSelect() {
