@@ -1,6 +1,6 @@
 import { FormOption } from "../utils/enums/form-option";
 import { GlobalNode } from "../utils/enums/global-node";
-import { test } from "../utils/test-utils";
+import { test } from "../page-objects/index";
 
 test.describe('Prefilled data', () => {
 

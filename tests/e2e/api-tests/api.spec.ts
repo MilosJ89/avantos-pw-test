@@ -1,11 +1,10 @@
-import test, { expect } from "@playwright/test";
-import { formApi } from "../../utils/api";
+import { expect, test } from "../../api"
 
 test.describe('Api tests', () => {
-    test('Verify rendering forms', async() => {
+    test('Verify rendering forms', async ({ formApi }) => {
         // When
         const response = await formApi.getFormList()
-        
+
         // Then
         await expect(response.status()).toBe(200)
     })

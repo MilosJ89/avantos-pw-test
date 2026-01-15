@@ -1,4 +1,4 @@
-import { test } from '../utils/test-utils';
+import { test } from '../page-objects/index';
 import { randomText } from '../helpers/helper-functions';
 import { FormOption } from '../utils/enums/form-option';
 import { GlobalNode } from '../utils/enums/global-node';
