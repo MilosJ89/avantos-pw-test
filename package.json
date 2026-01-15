@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:regression": "npx playwright test",
+    "test:regression:open": "npx playwright test --ui",
+    "show:report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
